@@ -8,4 +8,4 @@ A weather app online with firebase auth.
 ![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 51 01](https://github.com/pjnsajj/weather-servise/assets/58331779/c27c6bcf-b6dc-405b-a3ea-aef9c3b8f5e7)
 ![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 50 39](https://github.com/pjnsajj/weather-servise/assets/58331779/fbec7717-c9f2-4dc2-a7cd-f56392ae187f)
 ![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 50 30](https://github.com/pjnsajj/weather-servise/assets/58331779/28b38e2f-aaf4-4f45-9658-65fc4a512c11)
-![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 12 33 55](https://github.com/pjnsajj/weather-servise/assets/58331779/24347e9b-3f2c-4e89-bb95-cba1e4c645fa)
+
