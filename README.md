@@ -1,16 +1,11 @@
 # weather_service
 
-A new Flutter project.
+A weather app online with firebase auth.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 51 34](https://github.com/pjnsajj/weather-servise/assets/58331779/98ec58e2-333a-4d74-9807-4abd3cad7af6)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 51 08](https://github.com/pjnsajj/weather-servise/assets/58331779/50a2401f-00df-41b3-b57e-0fa751300cd7)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 51 01](https://github.com/pjnsajj/weather-servise/assets/58331779/c27c6bcf-b6dc-405b-a3ea-aef9c3b8f5e7)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 50 39](https://github.com/pjnsajj/weather-servise/assets/58331779/fbec7717-c9f2-4dc2-a7cd-f56392ae187f)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 17 50 30](https://github.com/pjnsajj/weather-servise/assets/58331779/28b38e2f-aaf4-4f45-9658-65fc4a512c11)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-14 at 12 33 55](https://github.com/pjnsajj/weather-servise/assets/58331779/24347e9b-3f2c-4e89-bb95-cba1e4c645fa)
