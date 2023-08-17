@@ -56,7 +56,7 @@ class CurrentWeatherWidget extends StatelessWidget {
         RichText(
           text: TextSpan(children: [
             TextSpan(
-                text: '${weatherDataDaily}',
+                text: '$weatherDataDaily',
                 style: const TextStyle(
                   color: CustomColors.textColorWhite,
                   fontWeight: FontWeight.w400,

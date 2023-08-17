@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 );
                               }
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.person,
                               size: 20,
                               color: Colors.white,
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         weatherDataHourly:
                             globalController.getData().getHourlyWeather(),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       WeatherDetailWidget(
                         weatherDataCurrent:
                             globalController.getData().getCurrentWeather(),

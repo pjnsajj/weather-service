@@ -5,31 +5,36 @@ import 'package:weather_service/controller/global_controller.dart';
 import 'package:weather_service/model/weather_data_hourly.dart';
 import 'package:weather_service/utils/custom_colors.dart';
 
-class HourlyDataWwidget extends StatelessWidget {
+class HourlyDataWwidget extends StatefulWidget {
   final WeatherDataHourly weatherDataHourly;
-  HourlyDataWwidget({Key? key, required this.weatherDataHourly})
+  const HourlyDataWwidget({Key? key, required this.weatherDataHourly})
       : super(key: key);
 
+  @override
+  State<HourlyDataWwidget> createState() => _HourlyDataWwidgetState();
+}
+
+class _HourlyDataWwidgetState extends State<HourlyDataWwidget> {
   RxInt cardIndex = GlobalController().getIndex();
 
   @override
   Widget build(BuildContext context) {
-    final now = new DateTime.now();
+    final now = DateTime.now();
     String formatter = DateFormat('d MMMM').format(now);
     return Container(
       width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.only(left: 24, right: 24, top: 24),
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.2),
-          border: new Border.all(
+          color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.2),
+          border: Border.all(
             color: Colors.black54,
           ),
           borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Text(
+            const Text(
               'Сегодня',
               style: TextStyle(
                 fontSize: 17,
@@ -39,7 +44,7 @@ class HourlyDataWwidget extends StatelessWidget {
             Text(
               formatter,
               style:
-                  TextStyle(fontSize: 17, color: CustomColors.textColorWhite),
+                  const TextStyle(fontSize: 17, color: CustomColors.textColorWhite),
             ),
           ]),
           hourlyList(),
@@ -51,12 +56,12 @@ class HourlyDataWwidget extends StatelessWidget {
   Widget hourlyList() {
     return Container(
       height: 200,
-      padding: EdgeInsets.only(top: 10, bottom: 10),
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: weatherDataHourly.hourly.length > 12
+        itemCount: widget.weatherDataHourly.hourly.length > 12
             ? 14
-            : weatherDataHourly.hourly.length,
+            : widget.weatherDataHourly.hourly.length,
         itemBuilder: (context, index) {
           return Obx((() => GestureDetector(
                 onTap: () {
@@ -68,10 +73,10 @@ class HourlyDataWwidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                            offset: Offset(0.5, 0),
+                            offset: const Offset(0.5, 0),
                             blurRadius: 30,
                             spreadRadius: 1,
-                            color: Color.fromARGB(255, 255, 255, 255)
+                            color: const Color.fromARGB(255, 255, 255, 255)
                                 .withOpacity(0))
                       ],
                       gradient: cardIndex.value == index
@@ -81,12 +86,12 @@ class HourlyDataWwidget extends StatelessWidget {
                             ])
                           : null),
                   child: HourlyDetails(
-                    temp: weatherDataHourly.hourly[index].temp!,
+                    temp: widget.weatherDataHourly.hourly[index].temp!,
                     index: index,
                     cardIndex: cardIndex.toInt(),
-                    timeStamp: weatherDataHourly.hourly[index].dt!,
+                    timeStamp: widget.weatherDataHourly.hourly[index].dt!,
                     weatherIcon:
-                        weatherDataHourly.hourly[index].weather![0].icon!,
+                        widget.weatherDataHourly.hourly[index].weather![0].icon!,
                   ),
                 ),
               )));
@@ -96,18 +101,12 @@ class HourlyDataWwidget extends StatelessWidget {
   }
 }
 
-class HourlyDetails extends StatelessWidget {
+class HourlyDetails extends StatefulWidget {
   int temp;
   int index;
   int cardIndex;
   int timeStamp;
   String weatherIcon;
-
-  String getTime(final timeStamp) {
-    DateTime time = DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000);
-    String x = DateFormat('Hm').format(time);
-    return x;
-  }
 
   HourlyDetails(
       {Key? key,
@@ -119,30 +118,41 @@ class HourlyDetails extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<HourlyDetails> createState() => _HourlyDetailsState();
+}
+
+class _HourlyDetailsState extends State<HourlyDetails> {
+  String getTime(final timeStamp) {
+    DateTime time = DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000);
+    String x = DateFormat('Hm').format(time);
+    return x;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           child: Text(
-            getTime(timeStamp),
-            style: TextStyle(color: CustomColors.textColorWhite, fontSize: 15),
+            getTime(widget.timeStamp),
+            style: const TextStyle(color: CustomColors.textColorWhite, fontSize: 15),
           ),
         ),
         Container(
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           child: Image.asset(
-            'assets/weather/$weatherIcon.png',
+            'assets/weather/${widget.weatherIcon}.png',
             height: 40,
             width: 40,
           ),
         ),
         Container(
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           child: Text(
-            '$temp°',
-            style: TextStyle(color: CustomColors.textColorWhite, fontSize: 17),
+            '${widget.temp}°',
+            style: const TextStyle(color: CustomColors.textColorWhite, fontSize: 17),
           ),
         )
       ],
